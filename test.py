@@ -30,6 +30,9 @@ def cluster_balance(balance):
     elif balance >= 1000:
         return 3
 
-print(cluster_age(41))
-print(cluster_balance(-50))
+# print(cluster_age(41))
+# print(cluster_balance(-50))
 
+
+for i in range(0,10):
+    print(i)
