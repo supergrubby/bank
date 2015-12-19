@@ -24,11 +24,12 @@ def generate_tree_pdf():
     graph = pydot.graph_from_dot_data(dot_data.getvalue())
     graph.write_pdf("bank.pdf")
 
+
 load_data()
 print(len(data))
 print(len(target))
 
-clf = tree.DecisionTreeClassifier()
+clf = tree.DecisionTreeClassifier(max_leaf_nodes=None)
 clf = clf.fit(data, target)
 
 generate_tree_pdf()
@@ -36,5 +37,5 @@ generate_tree_pdf()
 result = clf.predict(data[:100])
 print(result)
 
-with open("result.txt","w") as outfile:
+with open("result.txt", "w") as outfile:
     outfile.write("\n".join(result))
